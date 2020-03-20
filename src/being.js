@@ -18,6 +18,4 @@ class Being {
     return (this.credits = creditsNew);
     }
 }
-var beingOne = new Being();
-console.log(beingOne.updateCredits(2000))
 module.exports = Being;

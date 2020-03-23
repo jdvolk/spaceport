@@ -1,18 +1,35 @@
+var Being = require('./being');
+var Part = require('./part');
+var Ship = require('./ship');
+var Shop = require('./shop');
+
+var validTypes = [
+    'shell',
+    'hyperdrive',
+    'computer',
+    'life support',
+    'landing gear',
+    undefined,
+];
 class Planet {
-    constructor(name, shopName, canLand, shop, coordinates) {}
-//    - has a name
-//    - can have a different name
-//    - can have a shop
-//    - can have a different shop
-//    - can allow a ship to land
-//    - has coordinates
-//    - can have different coordinates
-//    - can calculate the distance between itself and another planet
-//    - can calculate the distance between itself and different planet
-//    - can refuel a ship
-//    - cannot send a ship to another planet if the ship is missing parts
-//    - cannot send a ship if it is has no fuel
-//    - cannot send a ship if it is has insufficient fuel
-//    - can send a ship and update the ship & planets
+    constructor(input) {
+        this.name = input.name;
+        this.shop = input.shop;
+        this.currentShip;
+        this.coordinates = input.coordinates;
+    }
+    landShip(ship) {
+        if (ship.includes(captian)) {
+            this.currentShip = ship;
+        }
+    }
+    refuelShip() {
+    }
+    calculateDistance(otherPlanet) {
+        var distance = (Math.sqrt((otherPlanet.coordinates.x - this.coordinates.x)** 2 + (otherPlanet.coordinates.y - this.coordinates.y)** 2 + (otherPlanet.coordinates.z - this.coordinates.z)** 2));
+        return distance;
+    }
+    giveClearence() {
+    }
 }
 module.exports = Planet;

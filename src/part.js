@@ -1,35 +1,28 @@
+var validTypes = [
+    'shell',
+    'hyperdrive',
+    'computer',
+    'life support',
+    'landing gear',
+    undefined,
+];
 class Part {
     constructor(input) {
-    // should have name
     this.name = input.name;
-    // can have different name
-    // has a type
-    this.type = input.type; 
-    // can have a different type
-    // must have a valid type 
-    // ccan have a value
+    this.type = (function(type) {
+        if(validTypes.includes(type)) {
+            return type;
+        } else {
+            return undefined;
+        }
+    })(input.type); 
     this.value = input.value;
-    // can have a different value
-    // is not broken by default
     this.broken = false;
-    // is invalid without a name 
-    // is invalid a type 
-    // is invalid without a value 
-    // is valid
     }
+
     isValid() {
-        var validTypes = [
-            'shell',
-            'hyperdrive',
-            'computer',
-            'life support',
-            'landing gear',
-            undefined,
-        ]
-        if (this.type === validTypes) {
-            return false;
-        } 
-        else if (this.name === undefined) {
+        var part = this.type
+        if (this.name === undefined) {
             return false;
         }
         else if (this.type === undefined) {

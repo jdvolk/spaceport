@@ -19,7 +19,7 @@ class Shop {
         };
     };
     outfitShip(ship, part) {
-        if (ship.captain[captain.credits] && ) {}
+        if (ship.captain[captain.credits]) {}
     }
 }
 module.exports = Shop;
